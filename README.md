@@ -36,12 +36,9 @@ in order to install this project.
 * [Install Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos)
 * Download [dexcom-share-is-down](https://github.com/ryanpacker/dexcom-share-is-down/archive/master.zip) from Github
 * Move the zip file into the directory where you plan to use the project (`~/Documents` for these instructions)
-* Open Terminal and cd into the project
+* Open Terminal, cd into the project and run `composer install`
 ```
 $ cd ~/Documents/dexcom-share-is-down-master
-```
-* cd into project
-```
 $ composer install
 ```
 * Edit `~/Documents/dexcom-share-is-down-master/.env` file to add your Nightscout credentials
@@ -55,7 +52,7 @@ $ php bin/console go -d5
 ```
 * If successful thus far, run with a large number to backfill
 ```
-$ php bin/console go -d5
+$ php bin/console go -d100
 ```
 * Edit the crontab to get this job to run every minute
 ```
