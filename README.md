@@ -1,6 +1,7 @@
 # dexcom-share-is-down
 PHP project to update Nightscout with SGVs from Loop's predicted BG values
 
+## Disclaimer
 DO NOT USE UNLESS YOU UNDERSTAND WHAT THIS PROJECT IS DOING. USE AT YOUR OWN RISK.
 
 The most likely issues will be associated with getting composer and Symfony working,
@@ -13,7 +14,7 @@ MongoDB.
 Pull requests are welcomed. Someone can likely make this much more usable - this was
 quick and dirty for my needs. Hopefully it's useful to someone else.
 
-------
+## Background
 When Dexcom's share servers are down, NightScout is unable to get and display SGVs.
 Fortunately, Loop has already sent a good proxy for SGV in the form of predicted BG
 values. In most cases, the next predicted BG value is equal to the current SGV.
