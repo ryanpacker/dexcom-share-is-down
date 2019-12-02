@@ -63,3 +63,4 @@ $ crontab -e
 ```
  * * * * * php ~/Documents/dexcom-share-is-down-master/bin/console go -d3 >> ~/Documents/dexcom-share-is-down-master/activity_log.txt
 ```
+* In case this isn't obvious, this needs to run on a computer that is always on and doesn't go to sleep. If the computer isn't running or can't connect to the internet, this tool won't work. 
