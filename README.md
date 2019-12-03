@@ -34,6 +34,30 @@ will also need to
 in order to install this project.
 
 ## Installation and Setup
+### Heroku Deployment (the easy way)
+* Fork this repo by clicking on the "Fork" button on [this page](https://github.com/ryanpacker/dexcom-share-is-down)
+* Create a developer account with Heroku if you don't already have one
+* Login to your [Heroku dashboard](https://dashboard.heroku.com/)
+* Click on the "New" button and then "Create New App"
+* Give your app a name - doesn't matter what it is - and click "Create App"
+* Under the "Deploy" tab in the "Deployment Method" section, select "Github"
+* If your Github account is already connected to your Heroku account, you can just click the "Search" button without entering any text. All of your Github repos will show up. If you have a bunch, then you probably don't need me to tell you how to find the one you're looking for :-)
+* Find your fork of "dexcom-share-is-down" and click "Connect"
+* Toward the bottom of the screen in the "Manual deploy" section, select the branch you want (if you don't know what this means, you want master) and then click "Deploy Branch"
+* It will take a few seconds during which you'll see scrolling text. At the end you should see "Your app was successfully deployed"
+* Go to the "Settings" tab of the dashboard and click "Reveal Config Vars"
+* Add NIGHTSCOUT_URL and NIGHTSCOUT_SECRET to your config vars (make sure you don't include a trailing slash on your URL)
+* Go to the resources tab to add two "Add-ons"
+* Search for "papertrail" - click on Papertrail and then click "Provision"
+* Search for and add "Heroku Scheduler" the same way
+* Click on "Heroku Scheduler" to open a new tab
+* Click "Create Job" and then type "php bin/console go -d5" under "Run Command" - then click "Save Job"
+* Go back to your original tab and click on Papertrail to open a new tab - agree to the terms of service
+* If you've done everything correctly, every 10 minutes you should see the output from the script in Papertrail
+* To turn off the service, just remove the job from the Heroku Scheduler
+
+### Local Deployment (slightly harder way)
+
 * [Install Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos)
 * Download [dexcom-share-is-down](https://github.com/ryanpacker/dexcom-share-is-down/archive/master.zip) from Github
 * Move the zip file into the directory where you plan to use the project (`~/Documents` for these instructions)
